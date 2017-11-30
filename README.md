@@ -1,7 +1,7 @@
 vdb_cmd
 =======
 
-Commands that manipulate with OpenVDB files. 
+Commands that manipulate OpenVDB sparse volume files. 
 
 Getting started
 ---------------
