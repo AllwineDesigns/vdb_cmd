@@ -12,6 +12,27 @@ Ensure you have OpenVDB installed. Below are steps to take to install it on a Ma
     cd vdb_cmd
     make
 
+# Commands
+
+### stl2vdb
+
+   stl2vdb [-v <voxel size>] <input STL file> <output VDB file>
+
+Rasterizes an STL mesh into an OpenVDB sparse volume levelset grid with the provided voxel size. If the voxel size is omitted, it defaults to .5.
+
+### vdb2stl
+
+   vdb2stl [-d <detail>] <input VDB file> <output STL file>
+
+Convert an OpenVDB sparse volume levelset grid to an STL mesh with the provided detail (0-1). If detail is omitted, it defaults to .9.
+
+### vdb_boolean
+
+    vdb_boolean -a <VDB file A> -b <VDB file B> [ -i ] [ -u ] [ -d ] <out file>
+
+Performs a CSG boolean operation on VDB levelset grids A and B. -i will perform the intersection of A and B. -u will 
+perform the union of A and B. -d will perform the difference of A and B.
+
 # Install Steps for Mac
 
     # Install most dependencies with homebrew
