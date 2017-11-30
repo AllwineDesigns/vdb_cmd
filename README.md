@@ -49,9 +49,13 @@ Change Source paths
 * blosc - `/usr/local/`
 
 Comment out `CONCURRENT_MALLOC_LIB := -ljemalloc`
+
 Uncomment `CONCURRENT_MALLOC_LIB := -ltbbmalloc_proxy -ltbbmalloc`
+
 Set `CONCURRNET_MALLOC_LIB_DIR` to `$(TBB_LIB_DIR)`
+
 Comment out python
+
 Change `libboost_thread` to `libboost_thread-mt`
 
 Copyright 2017 Freakin' Sweet Apps, LLC (stl_cmd@freakinsweetapps.com)
