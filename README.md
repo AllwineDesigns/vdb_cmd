@@ -36,22 +36,22 @@ Ensure you have OpenVDB installed. Below are steps to take to install it on a Ma
 
 ## Edit Makefile
 
-Change DESTDIR to /usr/local
+Change DESTDIR to `/usr/local`
 
 Change Homebrew paths
-* boost - /usr/local/Cellar/boost/<version>/
-* tbb - /usr/local/Cellar/tbb/<version>/
-* openexr - /usr/local/Cellar/openexr/<version>/
+* boost - `/usr/local/Cellar/boost/<version>/`
+* tbb - `/usr/local/Cellar/tbb/<version>/`
+* openexr - `/usr/local/Cellar/openexr/<version>/`
 * etc.
-* python - /usr/local/Cellar/python/<version>/Frameworks/Python.framework/Headers
+* python - `/usr/local/Cellar/python/<version>/Frameworks/Python.framework/Headers`
 
 Change Source paths
-* blosc - /usr/local/
+* blosc - `/usr/local/`
 
-Comment out CONCURRENT_MALLOC_LIB := -ljemalloc
-Uncomment CONCURRENT_MALLOC_LIB := -ltbbmalloc_proxy -ltbbmalloc
-Change CONCURRNET_MALLOC_LIB_DIR to $(TBB_LIB_DIR)
+Comment out `CONCURRENT_MALLOC_LIB := -ljemalloc`
+Uncomment `CONCURRENT_MALLOC_LIB := -ltbbmalloc_proxy -ltbbmalloc`
+Set `CONCURRNET_MALLOC_LIB_DIR` to `$(TBB_LIB_DIR)`
 Comment out python
-Change libboost_thread to libboost_thread-mt
+Change `libboost_thread` to `libboost_thread-mt`
 
 Copyright 2017 Freakin' Sweet Apps, LLC (stl_cmd@freakinsweetapps.com)
