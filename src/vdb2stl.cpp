@@ -32,7 +32,7 @@ Copyright 2017 by Allwine Designs, LLC
 
 #include "stl_util.h"
 
-using namespace openvdb::v5_0;
+using namespace openvdb;
 
 // taken from stl_threads, should probably be factored out to a shared header/library or something
 void write_tri(FILE *f,

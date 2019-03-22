@@ -33,7 +33,7 @@ Copyright 2017 by Allwine Designs, LLC
 
 #include "stl_util.h"
 
-using namespace openvdb::v5_0;
+using namespace openvdb;
 
 void ReadMesh(const char *filename, std::vector<Vec3s>& verts,
                 std::vector<Vec3I>& tris) {
