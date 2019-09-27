@@ -1,5 +1,5 @@
 BIN_DIR := bin
-CMDS := $(addprefix $(BIN_DIR)/,stl2vdb vdb2stl vdb_boolean vdb_union)
+CMDS := $(addprefix $(BIN_DIR)/,stl2vdb vdb2stl vdb_boolean vdb_union vdb_combine)
 
 CC := g++
 CFLAGS=-O3
