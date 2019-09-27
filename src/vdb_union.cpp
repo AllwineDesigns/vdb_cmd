@@ -60,10 +60,12 @@ int main(int argc, char **argv)
         grid = curGrid;
       }
     }
+    file.close();
 
     for(int i = 2; i < argc-1; i++) {
       openvdb::io::File curFile(argv[i]);
       curFile.open();
+      openvdb::FloatGrid::Ptr unionGrid;
 
       for (openvdb::io::File::NameIterator nameIter = curFile.beginName();
           nameIter != curFile.endName(); ++nameIter) {
@@ -71,9 +73,12 @@ int main(int argc, char **argv)
 
         openvdb::FloatGrid::Ptr curGrid = openvdb::gridPtrCast<openvdb::FloatGrid>(baseGrid);
         if(curGrid != NULL) {
-          openvdb::tools::csgUnion(*grid, *curGrid, true);
+          unionGrid = curGrid;
         }
       }
+      openvdb::FloatGrid::Ptr u = openvdb::tools::csgUnionCopy<openvdb::Grid<openvdb::FloatTree>>(*grid, *unionGrid);
+      grid = u;
+      curFile.close();
     }
 
     char *out_filename = argv[argc-1];
@@ -83,5 +88,4 @@ int main(int argc, char **argv)
     openvdb::io::File outFile(out_filename);
     outFile.write(grids);
     outFile.close();
-
 }
